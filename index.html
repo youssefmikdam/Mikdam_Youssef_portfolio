@@ -164,10 +164,11 @@ nav {
 
 .pgrid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
 .pcard { background: var(--bg); padding: 28px 24px; transition: background 0.2s; display: block; text-decoration: none; color: inherit; }
+.pcard.wide { grid-column: span 2; }
 .pcard:hover { background: var(--bg2); }
 .pcat { font-family: 'Courier New', monospace; font-size: 0.63rem; color: var(--i4); letter-spacing: 0.1em; margin-bottom: 14px; display: flex; align-items: center; gap: 7px; }
 .dot { width: 5px; height: 5px; border-radius: 50%; }
-.db { background: #3b82f6; } .dr { background: #ef4444; } .dv { background: #8b5cf6; }
+.db { background: #3b82f6; } .dr { background: #ef4444; } .dv { background: #8b5cf6; } .dg { background: #22c55e; } .da { background: #f59e0b; }
 .pname { font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 16px; line-height: 1.35; }
 .pit { list-style: none; }
 .pit li { font-size: 0.82rem; color: var(--i3); padding: 5px 0 5px 11px; border-bottom: 1px solid var(--rl2); line-height: 1.5; position: relative; }
@@ -197,6 +198,8 @@ nav {
 .edeg { font-weight:600; font-size:0.94rem; color:var(--ink); margin-bottom:4px; }
 .esch { font-family:'Courier New',monospace; font-size:0.71rem; color:var(--i4); margin-bottom:9px; }
 .edesc { font-size:0.84rem; color:var(--i3); line-height:1.65; }
+.edesc.gap { margin-bottom:16px; }
+.eitem .chips { margin-bottom:14px; }
 
 .cwrap { border:1px solid var(--rule); border-radius:10px; overflow:hidden; }
 .ctop {
@@ -253,6 +256,7 @@ footer { max-width:var(--w); margin:0 auto; padding:24px 44px; border-top:1px so
   .sec { padding:42px 24px; }
   .pfa { grid-template-columns:1fr; }
   .pgrid { grid-template-columns:1fr; }
+  .pcard.wide { grid-column:auto; }
   .eitem { grid-template-columns:1fr; gap:6px; }
   .ctop { flex-direction:column; align-items:flex-start; }
   .cintro { text-align:left; max-width:100%; }
@@ -280,7 +284,7 @@ footer { max-width:var(--w); margin:0 auto; padding:24px 44px; border-top:1px so
 
   <div class="photo-col">
     <div class="photo-frame">
-        <img src="ma-photo.jpg" alt="Mikdam Youssef">
+        <img src="ma-photo.jpg" alt="Mikdam Youssef" onerror="this.style.display='none'">
       <div class="photo-placeholder">
         <div class="photo-initials">MY</div>
         <div class="photo-hint">Ajouter<br>votre photo</div>
@@ -293,10 +297,10 @@ footer { max-width:var(--w); margin:0 auto; padding:24px 44px; border-top:1px so
   </div>
 
   <div class="hero-main">
-    <div class="eyebrow">ENSA OUJDA &nbsp;·&nbsp; 4ÈME ANNÉE</div>
+    <div class="eyebrow">ENSA OUJDA &nbsp;·&nbsp; 5ÈME ANNÉE</div>
     <div class="hero-name">Mikdam<br><span>Youssef</span></div>
     <p class="hero-role">Élève Ingénieur — Sécurité Informatique &amp; Cybersécurité</p>
-    <p class="hero-bio">21 ans. Passionné par l'investigation numérique et la défense des systèmes — je construis une expertise en SOC, Pentesting et OSINT avec une approche méthodique et orientée résultats.</p>
+    <p class="hero-bio">Passionné par la défense des systèmes et l'investigation numérique. Je construis une expertise en SOC, pentesting, OSINT et automatisation de la sécurité, avec une première expérience en entreprise sur le durcissement de serveurs Linux et Windows.</p>
     <div class="pills">
       <a href="mailto:mikdamyoussef1@gmail.com" class="pill">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
@@ -316,15 +320,15 @@ footer { max-width:var(--w); margin:0 auto; padding:24px 44px; border-top:1px so
   <div class="hero-stats">
     <div class="stat">
       <div class="stat-lbl">ANNÉES D'ÉTUDES</div>
-      <div class="stat-val">4</div>
+      <div class="stat-val">5</div>
     </div>
     <div class="stat">
       <div class="stat-lbl">PROJETS RÉALISÉS</div>
-      <div class="stat-val">4+</div>
+      <div class="stat-val">6+</div>
     </div>
     <div class="stat">
-      <div class="stat-lbl">OUTILS MAÎTRISÉS</div>
-      <div class="stat-val">12+</div>
+      <div class="stat-lbl">OUTILS UTILISÉS</div>
+      <div class="stat-val">25+</div>
     </div>
   </div>
 
@@ -339,11 +343,27 @@ footer { max-width:var(--w); margin:0 auto; padding:24px 44px; border-top:1px so
   </div>
   <div class="elist">
     <div class="eitem">
-      <div class="eperiod">Août 2026 — À venir</div>
+      <div class="eperiod">Août 2026 — Septembre 2026</div>
       <div>
-        <div class="edeg">Stagiaire PFA <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(34,197,94,.1);color:#4ade80;border:1px solid rgba(34,197,94,.2);padding:2px 9px;border-radius:4px;font-family:'Courier New',monospace;font-size:0.63rem;letter-spacing:0.04em;margin-left:8px;vertical-align:middle;"><span class="bdot"></span>À venir</span></div>
-        <div class="esch">Transdev · Tramway Rabat-Salé</div>
-        <div class="edesc">Stage de fin d'année d'ingénieur au sein de l'exploitant du réseau de tramway Rabat-Salé, dans la continuité du PFA sur la sécurité informatique et les techniques OSINT.</div>
+        <div class="edeg">Stagiaire — Cybersécurité <span style="font-weight:400;color:var(--i3)">(stage de fin d'année)</span></div>
+        <div class="esch">Transdev Maroc · Tramway Rabat-Salé · Salé</div>
+        <div class="edesc gap">Durcissement automatisé de serveurs Linux et Windows Server, de l'audit initial au rapport final, dans un environnement d'entreprise réel.</div>
+        <div class="chips">
+          <span class="chip">Ansible</span>
+          <span class="chip">Ansible Vault</span>
+          <span class="chip">CIS Benchmarks</span>
+          <span class="chip">Lynis</span>
+          <span class="chip">PowerShell</span>
+          <span class="chip">WSUS</span>
+          <span class="chip">MITRE ATT&amp;CK</span>
+        </div>
+        <ul class="plist">
+          <li>Automatisation du durcissement avec des playbooks Ansible idempotents (SSH, WinRM, secrets chiffrés) selon les CIS Benchmarks</li>
+          <li>Audits de conformité avant/après : Lynis côté Linux, scripts PowerShell sur mesure côté Windows, rapport HTML consolidé généré automatiquement</li>
+          <li>Durcissement SSH, authentification PAM, journalisation (auditd), noyau, permissions et détection d'intrusion ; politique de comptes et pare-feu Windows</li>
+          <li>Tests Purple Team autorisés et déploiement ciblé de correctifs via WSUS</li>
+          <li>Diagnostic d'un incident de la chaîne d'authentification, analyse de l'impact des GPO de domaine, rapport technique et recommandations</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -379,6 +399,8 @@ footer { max-width:var(--w); margin:0 auto; padding:24px 44px; border-top:1px so
         <li>Génération automatique d'un rapport d'investigation au format HTML</li>
         <li>Cartographie relationnelle avec Maltego : 117+ entités et 138+ relations identifiées</li>
         <li>Collecte et corrélation de données multi-sources pour identifier les risques d'exposition</li>
+        <li>Scénario Red Team basé sur le Cyber Kill Chain et MITRE ATT&amp;CK</li>
+        <li>Gestion de projet documentée : RACI, matrice des risques, diagramme de Gantt</li>
         <li>Élaboration d'un guide méthodologique complet pour les processus d'investigation</li>
       </ul>
     </div>
@@ -425,6 +447,25 @@ footer { max-width:var(--w); margin:0 auto; padding:24px 44px; border-top:1px so
         <li>Reverse engineering d'applications Android</li>
       </ul>
     </div>
+    <a href="https://youssefmikdam.github.io/picoctf-writeups/" target="_blank" rel="noopener" class="pcard">
+      <div class="pcat"><span class="dot dg"></span>CTF · FORENSIQUE</div>
+      <div class="pname">Write-ups CTF &amp;<br>Forensique mémoire</div>
+      <ul class="pit">
+        <li>Write-ups structurés : forensics, web, binary exploitation, crypto</li>
+        <li>Analyse forensique d'une image mémoire avec Volatility</li>
+        <li>Site de write-ups publié sur GitHub Pages</li>
+      </ul>
+      <div class="plink">Voir les write-ups <span class="parr">↗</span></div>
+    </a>
+    <div class="pcard wide" style="cursor:default">
+      <div class="pcat"><span class="dot da"></span>CLOUD · INFRASTRUCTURE</div>
+      <div class="pname">Architecture cloud sécurisée<br>et conteneurs</div>
+      <ul class="pit">
+        <li>Étude d'une architecture trois-tiers avec DMZ : machines virtuelles, pare-feu et matrice des flux autorisés</li>
+        <li>Travaux pratiques Docker dans le cadre du module Cloud Computing</li>
+        <li>Rapports techniques rédigés en LaTeX</li>
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -440,19 +481,23 @@ footer { max-width:var(--w); margin:0 auto; padding:24px 44px; border-top:1px so
     <tbody>
       <tr>
         <td><div class="sdom">Défense &amp; Monitoring</div><div class="ssub">SOC · SIEM · IDS</div></td>
-        <td><div class="slist"><span class="sc">Wazuh</span><span class="sc">ELK Stack</span><span class="sc">Filebeat</span><span class="sc">Kibana</span><span class="sc">SIEM</span><span class="sc">IDS/IPS</span></div></td>
+        <td><div class="slist"><span class="sc">Wazuh</span><span class="sc">ELK Stack</span><span class="sc">Filebeat</span><span class="sc">Kibana</span><span class="sc">SIEM</span><span class="sc">IDS/IPS</span><span class="sc">auditd</span><span class="sc">fail2ban</span><span class="sc">AIDE</span><span class="sc">MITRE ATT&amp;CK</span></div></td>
+      </tr>
+      <tr>
+        <td><div class="sdom">Automatisation &amp; Conformité</div><div class="ssub">Durcissement · Audit</div></td>
+        <td><div class="slist"><span class="sc">Ansible</span><span class="sc">Ansible Vault</span><span class="sc">CIS Benchmarks</span><span class="sc">Lynis</span><span class="sc">PowerShell</span><span class="sc">WSUS</span><span class="sc">GPO (notions)</span></div></td>
       </tr>
       <tr>
         <td><div class="sdom">Offensif &amp; Pentest</div><div class="ssub">Red team · Exploit dev</div></td>
-        <td><div class="slist"><span class="sc">Metasploit</span><span class="sc">Burp Suite</span><span class="sc">Nmap</span><span class="sc">Nessus</span><span class="sc">Immunity Debugger</span><span class="sc">Frida</span><span class="sc">Kali Linux</span></div></td>
+        <td><div class="slist"><span class="sc">Metasploit</span><span class="sc">Burp Suite</span><span class="sc">Nmap</span><span class="sc">Nessus</span><span class="sc">Immunity Debugger</span><span class="sc">Frida</span><span class="sc">LinPEAS/WinPEAS</span><span class="sc">Kali Linux</span></div></td>
       </tr>
       <tr>
-        <td><div class="sdom">OSINT &amp; Investigation</div><div class="ssub">Renseignement · SOCMINT</div></td>
-        <td><div class="slist"><span class="sc">Maltego</span><span class="sc">theHarvester</span><span class="sc">SpiderFoot</span><span class="sc">Recon-ng</span><span class="sc">Google Dorks</span><span class="sc">SOCMINT</span></div></td>
+        <td><div class="sdom">OSINT &amp; Forensique</div><div class="ssub">Renseignement · Investigation</div></td>
+        <td><div class="slist"><span class="sc">Maltego</span><span class="sc">theHarvester</span><span class="sc">SpiderFoot</span><span class="sc">Recon-ng</span><span class="sc">Google Dorks</span><span class="sc">SOCMINT</span><span class="sc">Volatility</span></div></td>
       </tr>
       <tr>
-        <td><div class="sdom">Infrastructure &amp; Scripting</div><div class="ssub">Réseaux · Automatisation</div></td>
-        <td><div class="slist"><span class="sc">Python</span><span class="sc">Bash Scripting</span><span class="sc">Cisco VLAN/ACL</span><span class="sc">OSPF</span><span class="sc">Wireshark</span></div></td>
+        <td><div class="sdom">Infrastructure &amp; Scripting</div><div class="ssub">Systèmes · Réseaux · Code</div></td>
+        <td><div class="slist"><span class="sc">Python</span><span class="sc">Bash Scripting</span><span class="sc">PowerShell</span><span class="sc">Linux</span><span class="sc">Windows Server</span><span class="sc">Docker</span><span class="sc">Cisco VLAN/ACL</span><span class="sc">OSPF</span><span class="sc">Wireshark</span></div></td>
       </tr>
     </tbody>
   </table>
@@ -467,10 +512,10 @@ footer { max-width:var(--w); margin:0 auto; padding:24px 44px; border-top:1px so
   </div>
   <div class="elist">
     <div class="eitem">
-      <div class="eperiod">2024 — 2026</div>
+      <div class="eperiod">2024 — 2027</div>
       <div>
         <div class="edeg">Cycle ingénieur — Sécurité Informatique &amp; Cybersécurité</div>
-        <div class="esch">ENSA Oujda · École Nationale des Sciences Appliquées</div>
+        <div class="esch">ENSA Oujda · École Nationale des Sciences Appliquées · 5ème année</div>
         <div class="edesc">Spécialisation dans la protection des infrastructures, la gestion des menaces cyber, l'analyse forensique et le développement de solutions sécurisées.</div>
       </div>
     </div>
@@ -495,10 +540,10 @@ footer { max-width:var(--w); margin:0 auto; padding:24px 44px; border-top:1px so
   <div class="cwrap">
     <div class="ctop">
       <div>
-        <div class="cbadge"><span class="bdot"></span>Disponible pour opportunités à distance (Remote)</div>
+        <div class="cbadge"><span class="bdot"></span>Ouvert aux opportunités</div>
         <div class="cheadline">Discutons d'une collaboration en cybersécurité.</div>
       </div>
-      <p class="cintro">Étudiant en 4ème année à l'ENSA Oujda, je suis ouvert aux projets à distance (Audit, SOC, OSINT) avant mon stage de fin d'année.</p>
+      <p class="cintro">Élève ingénieur en 5ème année à l'ENSA Oujda, je suis ouvert aux échanges et aux projets en SOC, audit, sécurité des systèmes et OSINT.</p>
     </div>
     <div class="crows">
       <a href="mailto:mikdamyoussef1@gmail.com" class="crow">
